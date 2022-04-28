@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model comments {
+  Id_com     Int       @id @default(autoincrement())
+  User_com   Int
+  Post_com   Int
+  Text_com   String    @db.VarChar(500)
+  Visuel_com String    @db.VarChar(500)
+  Date_com   DateTime? @db.Date
+  published  Boolean?
+  posts      posts     @relation(fields: [Post_com], references: [Post_id], onUpdate: Restrict, map: "foreign6")
+  persons    persons   @relation(fields: [User_com], references: [Id_user], onDelete: Cascade, map: "foreign3")
+
+  @@index([User_com], map: "foreign3")
+  @@index([Post_com], map: "foreign6")
+}
+
+model likes {
+  Id_like   Int       @id @default(autoincrement())
+  User_like Int
+  Post_like Int
+  Date_like DateTime? @db.Date
+  posts     posts     @relation(fields: [Post_like], references: [Post_id], onDelete: Cascade, map: "foreign4")
+  persons   persons   @relation(fields: [User_like], references: [Id_user], onDelete: Cascade, map: "foreign5")
+
+  @@index([Post_like], map: "foreign4")
+  @@index([User_like], map: "foreign5")
+}
+
+model persons {
+  Id_user     Int        @id
+  Pseudo      String     @db.VarChar(255)
+  Email       String?    @db.VarChar(255)
+  PassWord    String?    @db.VarChar(255)
+  Visuel_user String?    @db.VarChar(255)
+  isAdmin     Boolean?
+  isActif     Boolean?
+  comments    comments[]
+  likes       likes[]
+  posts       posts[]
+}
+
+model posts {
+  Post_id     Int        @id @default(autoincrement())
+  Post_user   Int
+  publier     Boolean?
+  Titre       String     @db.VarChar(500)
+  Contenu     String?    @db.VarChar(500)
+  Post_visuel String?    @db.VarChar(300)
+  Date_post   DateTime?  @db.DateTime(0)
+  Likes       Int?       @default(0)
+  comment     Int        @default(0)
+  persons     persons    @relation(fields: [Post_user], references: [Id_user], onDelete: NoAction, onUpdate: NoAction, map: "foreign9")
+  comments    comments[]
+  likes       likes[]
+
+  @@index([Post_user], map: "foreign9")
+}

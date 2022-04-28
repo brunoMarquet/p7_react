@@ -1,0 +1,22 @@
+{
+  "name": "p7_0_back",
+  "version": "1.0.0",
+  "description": "coucou",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bme",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^3.12.0",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "password-validator": "^5.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "prisma": "^3.12.0"
+  }
+}

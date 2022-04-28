@@ -1,0 +1,107 @@
+body {
+  background-color: rgb(155, 150, 144);
+}
+button {
+  padding: 10px;
+  margin: 20px;
+  margin-left: 30px;
+  border-radius: 4px;
+  display: inline;
+  cursor: pointer;
+}
+button:hover {
+  border-color: rgb(255, 136, 0);
+  background-color: rgb(235, 184, 117);
+  /*opacity: 0.8;*/
+}
+
+i {
+  font-size: 1.6rem;
+}
+.fa-thumbs-up {
+  color: rgb(27, 87, 25);
+}
+.fa-thumbs-down:hover,
+.far-thumbs-down:hover {
+  color: rgb(241, 10, 10);
+  cursor: pointer;
+}
+.fa-thumbs-down {
+  color: rgb(136, 18, 18);
+}
+.fa-thumbs-up:hover,
+.far-thumbs-up:hover {
+  color: rgb(39, 207, 47);
+  cursor: pointer;
+}
+.fas :hover,
+.far :hover {
+  cursor: pointer;
+}
+
+.effacer {
+  background-color: rgb(226, 156, 75);
+}
+.modif {
+  background-color: rgb(186, 119, 218);
+}
+#nav_bton {
+  /* display: none;*/
+}
+.spicySauce___ {
+}
+.spicySauce a {
+  text-decoration: none;
+}
+.spicySauce {
+  margin: 5px;
+  text-align: center;
+
+  border-radius: 24px;
+
+  width: 170px;
+  box-shadow: 3px 3px hsl(0deg 0% 50% / 30%);
+  flex: 1;
+  min-width: 240px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background: #8b8b81;
+}
+#lesSauces2 {
+  display: flex;
+  flex-flow: row wrap; /* or inline-flex */
+}
+i :hover {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+h2 {
+  color: black;
+  font-size: 28px;
+}
+h2 + p {
+  color: rgb(170, 8, 35);
+  font-size: 24px;
+}
+.tt2 {
+  color: black;
+  font-size: 22px;
+}
+.users {
+  background-color: rgb(237, 178, 102);
+  border: 2px solid black;
+  padding: 6px;
+  border-radius: 4px;
+}
+.info1 {
+  background-color: rgb(190, 174, 153);
+  border: 2px solid black;
+  border-radius: 8px;
+  padding-left: 30px;
+  padding-top: 20px;
+  margin-top: 20px;
+  width: 80%;
+  font-size: 24px;
+}
